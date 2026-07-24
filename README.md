@@ -1,9 +1,9 @@
 <!-- xonettn -->
 <div align="center">
 
-# 🤖 Unthink Ai
+# 🤖 Unthink AI
 
-The worlds first decision-making AI for trivial dilemmas. Built by Tech Pro.
+Unthink AI is a Vite + React app with a Netlify/Express API proxy that requires each user to provide their own Gemini API key per request.
 
 
 ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white)
@@ -13,63 +13,6 @@ The worlds first decision-making AI for trivial dilemmas. Built by Tech Pro.
 </div>
 
 ---
-
-## 📋 Overview
-The worlds first decision-making AI for trivial dilemmas. Built by Tech Pro.
-
-## 📦 Tech Stack
-- React
-- Vite
-- Express
-- Netlify (deployed)
-
-## 🗂️ Project Structure
-```
-unthink-ai/
-  - netlify
-  - public
-  - src
-  (22 files total)
-```
-
-## 🚀 Getting Started
-
-### 📋 Prerequisites
-- Node.js (v18+)
-- npm or yarn
-
-### 📦 Installation
-```bash
-git clone https://github.com/1nc0gn30/unthink-ai.git
-cd unthink-ai
-npm install
-```
-
-### 💻 Development
-```bash
-npm run dev
-```
-
-### 🔨 Build
-```bash
-npm run build
-```
-
-### ⚙️ Available Scripts
-  npm run dev - tsx server.ts
-  npm run build - vite build
-  npm run preview - vite preview
-  npm run clean - rm -rf dist
-  npm run lint - tsc --noEmit
-  npm run start - tsx server.ts
-
-## 📂 Original README
-<details>
-<summary>Click to expand original README</summary>
-
-# Unthink AI
-
-Unthink AI is a Vite + React app with a Netlify/Express API proxy that requires each user to provide their own Gemini API key per request.
 
 ## 💻 Local development
 
@@ -120,32 +63,6 @@ Unthink AI is a Vite + React app with a Netlify/Express API proxy that requires 
 - Endpoint: `POST /api/decide` -> Netlify Function `netlify/functions/decide.ts`
 - No server-managed Gemini key is used
 - Users must pass their own Gemini API key in each request
-
-</details>
-
-## 📝 TODO / Roadmap
-- [ ] Add unit tests
-- [ ] Add LICENSE file
-- [ ] Add Dockerfile for containerized deployment
-- [ ] Consider adding Tailwind CSS
-- [ ] Add CI/CD pipeline
-- [ ] Add contribution guidelines (CONTRIBUTING.md)
-- [ ] Improve error handling and edge cases
-- [ ] Add environment variable documentation
-- [ ] Update dependencies to latest versions
-- [ ] Add code comments and inline documentation
-
-## 🚀 Deployment
-This project is deployed on Netlify. See netlify.toml for configuration.
-
-## 👤 Author
-**Neal Frazier** - [@AshAmplifies](https://github.com/1nc0gn30)
-
-## 🔗 Links
-- GitHub: https://github.com/1nc0gn30/unthink-ai
-
----
-*This README was enhanced as part of the neals-projects-2026 batch update.*
 
 ---
 

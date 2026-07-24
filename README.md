@@ -1,17 +1,29 @@
-# unthink-ai
+<!-- xonettn -->
+<div align="center">
+
+# 🤖 Unthink Ai
 
 The worlds first decision-making AI for trivial dilemmas. Built by Tech Pro.
 
-## Overview
+
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white) ![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white)
+
+![Deploy](https://img.shields.io/badge/Deployed-Netlify-00C7B7?logo=netlify&logoColor=white)
+
+</div>
+
+---
+
+## 📋 Overview
 The worlds first decision-making AI for trivial dilemmas. Built by Tech Pro.
 
-## Tech Stack
+## 📦 Tech Stack
 - React
 - Vite
 - Express
 - Netlify (deployed)
 
-## Project Structure
+## 🗂️ Project Structure
 ```
 unthink-ai/
   - netlify
@@ -20,30 +32,30 @@ unthink-ai/
   (22 files total)
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
+### 📋 Prerequisites
 - Node.js (v18+)
 - npm or yarn
 
-### Installation
+### 📦 Installation
 ```bash
 git clone https://github.com/1nc0gn30/unthink-ai.git
 cd unthink-ai
 npm install
 ```
 
-### Development
+### 💻 Development
 ```bash
 npm run dev
 ```
 
-### Build
+### 🔨 Build
 ```bash
 npm run build
 ```
 
-### Available Scripts
+### ⚙️ Available Scripts
   npm run dev - tsx server.ts
   npm run build - vite build
   npm run preview - vite preview
@@ -51,7 +63,7 @@ npm run build
   npm run lint - tsc --noEmit
   npm run start - tsx server.ts
 
-## Original README
+## 📂 Original README
 <details>
 <summary>Click to expand original README</summary>
 
@@ -59,7 +71,7 @@ npm run build
 
 Unthink AI is a Vite + React app with a Netlify/Express API proxy that requires each user to provide their own Gemini API key per request.
 
-## Local development
+## 💻 Local development
 
 1. Install dependencies:
    `npm install`
@@ -68,7 +80,7 @@ Unthink AI is a Vite + React app with a Netlify/Express API proxy that requires 
    `npm run dev`
 4. Open `http://localhost:3000`
 
-## Production deployment (Netlify)
+## 🚀 Production deployment (Netlify)
 
 - Build command: `npm run build`
 - Publish directory: `dist`
@@ -76,7 +88,7 @@ Unthink AI is a Vite + React app with a Netlify/Express API proxy that requires 
 - API redirect: `/api/decide -> /.netlify/functions/decide` in `netlify.toml`
 - Security headers and SPA fallback redirects are configured in `netlify.toml`
 
-## API request flow
+## 🔌 API request flow
 
 1. Browser sends `POST /api/decide` with `{ prompt, apiKey }`
 2. In Netlify production, redirect routes request to `/.netlify/functions/decide`
@@ -88,14 +100,14 @@ Unthink AI is a Vite + React app with a Netlify/Express API proxy that requires 
 
 - `PORT` (optional): used by local Express runtime
 
-## SEO assets
+## 🔍 SEO assets
 
 - Page-level metadata in `index.html` (title, description, canonical, OG/Twitter)
 - `public/robots.txt`
 - `public/sitemap.xml`
 - `public/og-image.svg`
 
-## Post-deploy verification checklist
+## 🚀 Post-deploy verification checklist
 
 1. Confirm canonical resolves to your final production domain
 2. Confirm `https://<domain>/robots.txt` is reachable
@@ -111,7 +123,7 @@ Unthink AI is a Vite + React app with a Netlify/Express API proxy that requires 
 
 </details>
 
-## TODO / Roadmap
+## 📝 TODO / Roadmap
 - [ ] Add unit tests
 - [ ] Add LICENSE file
 - [ ] Add Dockerfile for containerized deployment
@@ -123,14 +135,22 @@ Unthink AI is a Vite + React app with a Netlify/Express API proxy that requires 
 - [ ] Update dependencies to latest versions
 - [ ] Add code comments and inline documentation
 
-## Deployment
+## 🚀 Deployment
 This project is deployed on Netlify. See netlify.toml for configuration.
 
-## Author
+## 👤 Author
 **Neal Frazier** - [@AshAmplifies](https://github.com/1nc0gn30)
 
-## Links
+## 🔗 Links
 - GitHub: https://github.com/1nc0gn30/unthink-ai
 
 ---
 *This README was enhanced as part of the neals-projects-2026 batch update.*
+
+---
+
+<div align="center">
+
+**[xonettn]** · Built by [Neal Frazier](https://github.com/1nc0gn30) · [@AshAmplifies](https://twitter.com/AshAmplifies)
+
+</div>

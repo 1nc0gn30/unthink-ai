@@ -1,19 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Manrope", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
-  background-color: #0f1115;
-  color: #e8eaed;
+  padding: 0;
+  background-color: #0b0d11;
+  color: #f2f4f8;
   font-family: var(--font-sans);
   overscroll-behavior-y: none;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Subtle architectural highlight on the locked verdict frame */
+.verdict-card-frame {
+  box-shadow:
+    0 0 0 1px rgba(232, 184, 75, 0.14),
+    0 20px 44px -24px rgba(0, 0, 0, 0.85);
 }

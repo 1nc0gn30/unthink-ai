@@ -3,49 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unthink AI</title>
-
-
-
-
-<script>
-      (() => {
-        const currentUrl = `${window.location.origin}/`;
-        const canonical = document.querySelector('link[rel="canonical"]');
-        const ogUrl = document.querySelector('meta[property="og:url"]');
-        const twitterUrl = document.querySelector('meta[name="twitter:url"]');
-
-        if (canonical) canonical.setAttribute('href', currentUrl);
-        if (ogUrl) ogUrl.setAttribute('content', currentUrl);
-        if (twitterUrl) twitterUrl.setAttribute('content', currentUrl);
-      })();
-    </script>
-      <meta name="description" content="The world's first decision-making AI for trivial dilemmas. Built by Tech Pro." />
-    <meta name="author" content="Tech Pro" />
+    <title>Unthink AI — Trivial Dilemma &amp; Tie-Breaker Engine</title>
+    <meta
+      name="description"
+      content="Fast, free in-browser decision engine for trivial dilemmas. Enter 2–6 options, pick from 5 tie-breaker modes (Instant Verdict, Elimination Tournament, 2-Minute Regret Minimizer, Pro/Con Tiebreaker, Deadpan Oracle), and get one clear call with zero login or API key."
+    />
+    <meta name="author" content="Neal Frazier Tech" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0b0f19" />
+    <meta name="theme-color" content="#0b0d11" />
     <link rel="canonical" href="https://unthink-ai.757tech.pro/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Unthink AI" />
-    <meta property="og:title" content="Unthink AI" />
-    <meta property="og:description" content="The world's first decision-making AI for trivial dilemmas. Built by Tech Pro." />
+    <meta property="og:title" content="Unthink AI — Trivial Dilemma &amp; Tie-Breaker Engine" />
+    <meta
+      property="og:description"
+      content="Drop 2–6 options, pick a tie-breaker mode, and lock in a decisive answer in milliseconds—100% client-side with local history and streak stats."
+    />
     <meta property="og:url" content="https://unthink-ai.757tech.pro/" />
-    <meta property="og:image" content="https://unthink-ai.757tech.pro/og-image.svg" />
-    <meta property="og:image:alt" content="Unthink AI preview image" />
+    <meta property="og:image" content="https://unthink-ai.757tech.pro/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Unthink AI brass-and-obsidian trivial dilemma and tie-breaker engine interface"
+    />
+
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Unthink AI" />
-    <meta name="twitter:description" content="The world's first decision-making AI for trivial dilemmas. Built by Tech Pro." />
-    <meta name="twitter:image" content="https://unthink-ai.757tech.pro/og-image.svg" />
+    <meta name="twitter:site" content="@1nc0gn30" />
+    <meta name="twitter:creator" content="@1nc0gn30" />
+    <meta name="twitter:title" content="Unthink AI — Trivial Dilemma &amp; Tie-Breaker Engine" />
+    <meta
+      name="twitter:description"
+      content="Break everyday analysis paralysis with 5 deterministic local tie-breaker modes, weighted brackets, and copyable verdict cards."
+    />
+    <meta name="twitter:image" content="https://unthink-ai.757tech.pro/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Unthink AI",
+            "url": "https://unthink-ai.757tech.pro/",
+            "description": "Free client-side trivial dilemma and tie-breaker engine with 5 modes: Instant Verdict, Weighted Coin & Elimination Tournament, 2-Minute Regret Minimizer, Pro/Con Tiebreaker, and Deadpan Oracle.",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Any",
+            "isAccessibleForFree": true,
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "creator": {
+              "@type": "Organization",
+              "name": "Neal Frazier Tech",
+              "url": "https://nullai.tech",
+              "founder": {
+                "@type": "Person",
+                "name": "Neal Frazier",
+                "sameAs": "https://github.com/1nc0gn30"
+              }
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does Unthink AI require an API key or account?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Unthink AI runs 100% locally in your browser with a fast deterministic decision engine across all five tie-breaker modes. Bringing your own Gemini API key is completely optional and off by default."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How is my decision history stored?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "All dilemmas, verdicts, and streak statistics are stored locally in your browser's localStorage. Nothing is sent to external servers unless you explicitly opt in with your own Gemini API key."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Unthink AI free to use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Every mode, preset, bracket view, and copyable verdict card is completely free and unlocked with zero paywalls. Optional support is available via Buy Us a Coffee (Stripe) or Solana tip."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="waitlist" />
-      <input type="email" name="email" />
-      <input type="text" name="bot-field" />
-    </form>
-
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

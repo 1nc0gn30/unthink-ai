@@ -1,53 +1,49 @@
 # Unthink AI
 
-Unthink AI is a Vite + React app with a Netlify/Express API proxy that requires each user to provide their own Gemini API key per request.
+A client-side decision engine for trivial everyday dilemmas. Enter 2 to 6 options, choose a tie-breaker mode, and lock in one answer immediately—zero login, zero paywalls, and zero API key required.
 
-## Local development
+- **Live URL**: [https://unthink-ai.757tech.pro/](https://unthink-ai.757tech.pro/)
+- **Source**: [https://github.com/1nc0gn30/unthink-ai](https://github.com/1nc0gn30/unthink-ai)
 
-1. Install dependencies:
-   `npm install`
-2. Optional: create `.env` from `.env.example` if you need to set `PORT`
-3. Start the app with Express middleware:
-   `npm run dev`
-4. Open `http://localhost:3000`
+## What It Does
 
-## Production deployment (Netlify)
+- **5 Client-Side Decision Modes**:
+  1. **Instant Verdict** — Seeded deterministic tie-break with confidence score, lead margin, and runner-up dismissal.
+  2. **Weighted Coin & Elimination Tournament** — Pairs options in head-to-head best-of-3 weighted coin flips until one champion survives, displaying the full bracket log.
+  3. **2-Minute Regret Minimizer** — Scores each option on reversibility, execution friction, and upside to pick the highest 48-hour regret floor.
+  4. **Pro/Con Tiebreaker** — Tallies pros (`+2`), cons (`-1.5`), and priority weight (`1–5`), applying a transparent seeded tie-break when scores deadlock.
+  5. **Deadpan Oracle** — Dry, blunt directive paired with tie-break metrics.
+- **Quick Everyday Presets**: One-click starter dilemmas for *Lunch*, *Weekend*, *Side Project*, *Watch Tonight*, and *Coffee Run*.
+- **Gut-Check Override**: If a verdict sparks instant disappointment, swap to the runner-up with one click and record the psychological reveal.
+- **Local Decision Log & Streak Stats**: Stores up to 40 recent verdicts in `localStorage` (`unthink_ai_history_v2`) with day streak, total verdicts, estimated overthinking saved, and one-click option reload.
+- **Copyable Verdict Card**: Exports a formatted plain-text verdict summary to the clipboard.
+- **Optional BYOK Gemini Enhancer**: Collapsed and off by default. Users who want an LLM-rewritten one-liner can pass their own Gemini API key to `POST /api/decide`; if unreachable, the app falls back to the local verdict without interrupting the flow.
 
-- Build command: `npm run build`
-- Publish directory: `dist`
-- Netlify Function path: `netlify/functions/decide.ts`
-- API redirect: `/api/decide -> /.netlify/functions/decide` in `netlify.toml`
-- Security headers and SPA fallback redirects are configured in `netlify.toml`
+## Local Development
 
-## API request flow
+```bash
+npm install
+npm run dev      # Express + Vite dev server on http://localhost:3000
+npm run lint     # TypeScript type-check (tsc --noEmit)
+npm test         # Engine unit tests + production guardrail checks
+npm run build    # Production bundle -> dist/
+```
 
-1. Browser sends `POST /api/decide` with `{ prompt, apiKey }`
-2. In Netlify production, redirect routes request to `/.netlify/functions/decide`
-3. API validates prompt length (1-500 chars) and presence of `apiKey`
-4. API calls Gemini using the user-provided `apiKey`
-5. API returns `{ decision }`
+## Architecture
 
-## Environment variables
+- `src/engine/decisionEngine.ts` — Pure deterministic PRNG (`FNV-1a` + `Mulberry32`) and scoring logic for all 5 modes, verdict card formatter, and streak calculation.
+- `src/engine/presets.ts` — Curated trivial dilemma presets and mode metadata.
+- `src/engine/storage.ts` — Safe `localStorage` persistence wrapper.
+- `src/components/VerdictStage.tsx` — Tactile reveal ticker, verdict card, mode breakdowns, gut-check prompt, and clipboard copy.
+- `src/components/HistoryPanel.tsx` — Streak metrics and persisted decision feed.
+- `netlify/functions/decide.ts` & `server.ts` — Optional BYOK Gemini endpoint (`POST /api/decide`), never required for core operation.
+- `tests/engine.test.ts` & `tests/guardrail.test.ts` — Automated unit and SEO/AEO/Netlify hygiene tests.
 
-- `PORT` (optional): used by local Express runtime
+## Support
 
-## SEO assets
+Unthink AI is 100% open-access with zero paywalls. If it saved you ten minutes of menu scrolling:
 
-- Page-level metadata in `index.html` (title, description, canonical, OG/Twitter)
-- `public/robots.txt`
-- `public/sitemap.xml`
-- `public/og-image.svg`
+- **Buy Us a Coffee (Stripe)**: [https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X](https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X)
+- **Solana Tip**: `GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK`
 
-## Post-deploy verification checklist
-
-1. Confirm canonical resolves to your final production domain
-2. Confirm `https://<domain>/robots.txt` is reachable
-3. Confirm `https://<domain>/sitemap.xml` is reachable
-4. Confirm `POST https://<domain>/api/decide` returns JSON
-5. Run Google URL Inspection on the homepage
-
-## Netlify AI Endpoint
-
-- Endpoint: `POST /api/decide` -> Netlify Function `netlify/functions/decide.ts`
-- No server-managed Gemini key is used
-- Users must pass their own Gemini API key in each request
+Engineered by **Neal Frazier Tech** ([@1nc0gn30](https://github.com/1nc0gn30)) • [NullAI Platform](https://nullai.tech)

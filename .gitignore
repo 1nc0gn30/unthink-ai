@@ -8,3 +8,4 @@ coverage/
 !.env.example
 SUMMARY.md
 TODO.md
+.netlify/
